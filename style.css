@@ -631,6 +631,9 @@ input:focus:hover, textarea:focus:hover {
     color: white;
 }
 
+.social_logo i{
+    color: white;
+}
 
 
 
