@@ -113,21 +113,21 @@ h1,h2,h3,h4,h5,p{
 
 .title h1 {
     font-size: 3.5rem;
-    background: linear-gradient(90deg, #ff8a00, #e52e71); /* Example gradient colors */
+    background: linear-gradient(90deg, #88d3ce, #6e45e2);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .title h2 {
     font-size: 2rem;
-    background: linear-gradient(90deg, #a2c2e0, #f3c6c1); /* Softer gradient colors */
+    background: linear-gradient(90deg, #b0bec5, #78909c);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .title h3 {
     font-size: 1.5rem;
-    background: linear-gradient(90deg, #b0bec5, #cfd8dc);
+    background: linear-gradient(90deg, #b0bec5, #78909c);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -140,7 +140,7 @@ section{
     font-family: var(--heading);
     font-size: 1.5rem;
     padding-bottom: 0rem;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient colors */
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb); 
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -180,7 +180,7 @@ main{
 .skills_title{
     font-family: var(--heading);
     font-size: 1.5rem;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient colors */
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb); 
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
@@ -220,7 +220,7 @@ main{
 .project_title{
     font-family: var(--heading);
     font-size: 1.5rem;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient colors */
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb); 
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 2rem;
@@ -281,7 +281,7 @@ main{
 .contact_title{
     font-family: var(--heading);
     font-size: 1.5rem;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient colors */
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb); 
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 2rem;
@@ -350,7 +350,7 @@ input:focus:hover, textarea:focus:hover {
     padding: 0.5rem 1rem; /* Add some padding for a better button size */
     border: none; /* Remove default border */
     border-radius: 3px; /* Add a slight border radius for smooth edges */
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb); 
     color: white; /* Button text color */
     cursor: pointer; /* Change cursor to pointer on hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
@@ -359,7 +359,7 @@ input:focus:hover, textarea:focus:hover {
 
 .btn:hover {
     transform: translateY(-3px); /* Slightly lift the button on hover */
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4); /* Enhance shadow on hover */
+    box-shadow: 0 6px 20px hsla(176, 46%, 68%, 0.6); /* Enhance shadow on hover */
 }
 
 
