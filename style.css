@@ -207,14 +207,14 @@ main{
 }
 
 .skills_items:hover {
-    transform: translateY(-0.35rem); /* Subtle lift effect on hover */
-    box-shadow: 0 4px 12px rgba(183, 183, 183, 0.6); /* Enhanced shadow on hover */
+    transform: translateY(-0.35rem); 
+    box-shadow: 0 4px 12px rgba(183, 183, 183, 0.6); 
 }
 
 .skills_img img {
     height: 4rem;
     width: auto;
-    margin-bottom: 0.5rem; /* Spacing between image and text */
+    margin-bottom: 0.5rem; 
 }
 
 .project_title{
@@ -248,7 +248,7 @@ main{
 
 .project_img {
     position: relative;
-    overflow: hidden; /* Ensure that pseudo-elements do not overflow the container */
+    overflow: hidden; 
 }
 
 .project_img img {
@@ -256,10 +256,9 @@ main{
     width: 100%;
     border-radius: 5px;
     object-fit: cover;
-    transition: transform 0.3s ease; /* For other effects like zooming */
+    transition: transform 0.3s ease; 
 }
 
-/* Vignette effect */
 .project_img::before {
     content: "";
     position: absolute;
@@ -267,16 +266,14 @@ main{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3)); /* Vertical gradient effect */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth transition */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3)); 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
 }
 
 .project_card:hover .project_img::before {
-    opacity: 1; /* Show the vignette effect on hover */
+    opacity: 1; 
 }
-
-/* Contact open */
 
 .contact_title{
     font-family: var(--heading);
@@ -328,45 +325,37 @@ textarea{
 }
 
 input:hover, textarea:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Lighten background on hover */
+    background-color: rgba(255, 255, 255, 0.2); 
     transition: border 0.3s ease, background-color 0.3s ease;
 }
 
 input:focus, textarea:focus {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly lighten background on focus */
-    box-shadow: 0 0 8px rgba(255, 123, 87, 0.5); /* Add subtle shadow on focus */
+    background-color: rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 0 8px rgba(255, 123, 87, 0.5); 
     transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect for focused input fields */
 input:focus:hover, textarea:focus:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly different background on hover while focused */
+    background-color: rgba(255, 255, 255, 0.2); 
 }
-
 
 .btn {
     font-family: var(--heading);
     font-size: 1.2rem;
-    padding: 0.5rem 1rem; /* Add some padding for a better button size */
-    border: none; /* Remove default border */
-    border-radius: 3px; /* Add a slight border radius for smooth edges */
+    padding: 0.5rem 1rem; 
+    border: none; 
+    border-radius: 3px; 
     background: linear-gradient(90deg, #a18cd1, #fbc2eb); 
-    color: white; /* Button text color */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Add a subtle shadow */
+    color: white; 
+    cursor: pointer; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); 
 }
 
 .btn:hover {
-    transform: translateY(-3px); /* Slightly lift the button on hover */
-    box-shadow: 0 6px 20px hsla(176, 46%, 68%, 0.6); /* Enhance shadow on hover */
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 20px hsla(176, 46%, 68%, 0.6); 
 }
-
-
-
-/* Contact close */
-
-/* footer open */
 
 .social{
     padding: 1rem;
@@ -380,8 +369,6 @@ input:focus:hover, textarea:focus:hover {
 .social_logo:hover{
     transform: translateY(-0.5rem);
 }
-
-/* footer close*/
 
 /* breapoints open */
 
@@ -539,9 +526,9 @@ input:focus:hover, textarea:focus:hover {
         transform: none;
     }
     .menu_items:hover {
-        color: #ff7e5f; /* Change color on hover */
-        transform: translateY(-5px) scale(1.1); /* Move and scale on hover */
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+        color: #ff7e5f; 
+        transform: translateY(-5px) scale(1.1); 
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
     }
 
     .open,
@@ -615,6 +602,8 @@ input:focus:hover, textarea:focus:hover {
     }
 }
 
+/* breapoints close */
+
 .open:hover, .close:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: rotate(180deg) scale(1.2);
@@ -636,5 +625,3 @@ input:focus:hover, textarea:focus:hover {
 }
 
 
-
-/* breapoints close */
