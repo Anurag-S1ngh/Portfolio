@@ -51,7 +51,7 @@ a {
 }
 
 .nav_container {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     width: 100%;
     box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
@@ -59,14 +59,37 @@ a {
     transform: translateY(-110%);
     transition: transform 0.4s ease-in-out;
     will-change: transform;
+    backdrop-filter: blur(20px);
 }
 
 .open,
-.close {
+.close,
+.sun,
+.moon {
     color: white;
     font-size: 1.8rem;
     cursor: pointer;
     position: absolute;
+}
+
+.sun,
+.moon{
+    top: 1.5rem;
+    right: 1.5rem;
+    position: fixed;
+}
+
+.moon_hide{
+    display: none;
+}
+
+.sun{
+    display: none;
+    right: 2.2rem;
+}
+
+.sunrise{
+    display: block;
 }
 
 .close {
@@ -155,19 +178,20 @@ main{
 }
 
 .about_img {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center; 
     height: 100%; 
-    width: 100%; 
+    width: 100% ; 
     padding-block: 2.5rem 1.5rem;
 }
 
 .about_img img {
     height: 10rem;
     width: 10rem;
+    margin-right: 1rem;
     object-fit: cover; 
-    border-radius: 50%;
+    border-radius: 50%  ;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 24px rgba(255, 255, 255, 0.5);
 }
@@ -195,26 +219,28 @@ main{
 }
 
 .skills_items {
-    background-color: rgb(53, 53, 53);
+    background: linear-gradient(135deg, hsla(210, 29%, 24%, 0.45), hsla(0, 0%, 0%, 0.8));
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 3px;
     padding: 1rem; 
-    box-shadow: 0 4px 8px rgba(250, 248, 248, 0.3); 
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(2px);
+    filter: grayscale(0);
 }
 
 .skills_items:hover {
-    transform: translateY(-0.35rem); 
-    box-shadow: 0 4px 12px rgba(183, 183, 183, 0.6); 
+    transform: translateY(-0.45rem); /* Subtle lift effect on hover */
+    box-shadow: 0 4px 12px rgba(183, 183, 183, 0.6); /* Enhanced shadow on hover */
 }
 
 .skills_img img {
     height: 4rem;
     width: auto;
-    margin-bottom: 0.5rem; 
+    margin-bottom: 0.5rem; /* Spacing between image and text */
 }
 
 .project_title{
@@ -248,7 +274,7 @@ main{
 
 .project_img {
     position: relative;
-    overflow: hidden; 
+    overflow: hidden; /* Ensure that pseudo-elements do not overflow the container */
 }
 
 .project_img img {
@@ -256,24 +282,28 @@ main{
     width: 100%;
     border-radius: 5px;
     object-fit: cover;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease; /* For other effects like zooming */
 }
 
+/* Vignette effect */
 .project_img::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3)); 
-    opacity: 0; 
-    transition: opacity 0.3s ease; 
+    height: 99%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5)); /* Vertical gradient effect */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    border-radius: 5px;
 }
 
 .project_card:hover .project_img::before {
-    opacity: 1; 
+    opacity: 1; /* Show the vignette effect on hover */
 }
+
+/* Contact open */
 
 .contact_title{
     font-family: var(--heading);
@@ -302,7 +332,8 @@ form{
     gap: 1rem;
 }
 
-::placeholder{
+input::placeholder,
+textarea::placeholder{
     font-family: var(--heading);
     color: rgba(255, 255, 255, 0.668);
 }
@@ -325,37 +356,45 @@ textarea{
 }
 
 input:hover, textarea:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.2); /* Lighten background on hover */
     transition: border 0.3s ease, background-color 0.3s ease;
 }
 
 input:focus, textarea:focus {
-    background-color: rgba(255, 255, 255, 0.2); 
-    box-shadow: 0 0 8px rgba(255, 123, 87, 0.5); 
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly lighten background on focus */
+    box-shadow: 0 0 8px rgba(255, 123, 87, 0.5); /* Add subtle shadow on focus */
     transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover effect for focused input fields */
 input:focus:hover, textarea:focus:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly different background on hover while focused */
 }
+
 
 .btn {
     font-family: var(--heading);
     font-size: 1.2rem;
-    padding: 0.5rem 1rem; 
-    border: none; 
-    border-radius: 3px; 
+    padding: 0.5rem 1rem; /* Add some padding for a better button size */
+    border: none; /* Remove default border */
+    border-radius: 3px; /* Add a slight border radius for smooth edges */
     background: linear-gradient(90deg, #a18cd1, #fbc2eb); 
-    color: white; 
-    cursor: pointer; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); 
+    color: white; /* Button text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Add a subtle shadow */
 }
 
 .btn:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0 6px 20px hsla(176, 46%, 68%, 0.6); 
+    transform: translateY(-3px); /* Slightly lift the button on hover */
+    box-shadow: 0 6px 20px hsla(176, 46%, 68%, 0.6); /* Enhance shadow on hover */
 }
+
+
+
+/* Contact close */
+
+/* footer open */
 
 .social{
     padding: 1rem;
@@ -370,7 +409,15 @@ input:focus:hover, textarea:focus:hover {
     transform: translateY(-0.5rem);
 }
 
+/* footer close*/
+
 /* breapoints open */
+
+@media (max-width:1200px) {
+    .glow_circle{
+        display: none !important;
+    }
+}
 
 @media  (min-width:768px) {
 
@@ -389,7 +436,7 @@ input:focus:hover, textarea:focus:hover {
 @media (min-width: 1200px) {
 
     section{
-        padding: 0 6rem ;
+        padding: 0rem 6rem ;
     }
 
     .title h1{
@@ -440,7 +487,7 @@ input:focus:hover, textarea:focus:hover {
     .skills,
     .project,
     .contact{
-        padding-block: 0rem 3rem;
+        padding-block: 5rem 3rem;
     }
 
 
@@ -526,9 +573,9 @@ input:focus:hover, textarea:focus:hover {
         transform: none;
     }
     .menu_items:hover {
-        color: #ff7e5f; 
-        transform: translateY(-5px) scale(1.1); 
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+        color: #ff7e5f; /* Change color on hover */
+        transform: translateY(-5px) scale(1.1); /* Move and scale on hover */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
     }
 
     .open,
@@ -549,7 +596,6 @@ input:focus:hover, textarea:focus:hover {
     .menu {
         flex-direction: column;
         justify-content: center;
-        gap: 2rem;
         padding-block: 1.5rem;
     }
 
@@ -573,6 +619,7 @@ input:focus:hover, textarea:focus:hover {
         position: relative;
         color: rgba(255, 255, 255, 0.6);
         font-weight: 600;
+        padding: 1rem;
         transition: color 0.4s ease, transform 0.3s ease, letter-spacing 0.3s ease;
     }
 
@@ -602,12 +649,9 @@ input:focus:hover, textarea:focus:hover {
     }
 }
 
-/* breapoints close */
-
 .open:hover, .close:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: rotate(180deg) scale(1.2);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .open i, .close i {
@@ -624,4 +668,128 @@ input:focus:hover, textarea:focus:hover {
     color: white;
 }
 
+/* breapoints close */
 
+/* Light Mode start */
+
+.light_mode_h1{
+    background: linear-gradient(135deg, hsla(275, 100%, 25%, 0.828), #FFDAB9) !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.light_mode_h2{
+    background: linear-gradient(145deg, #a3d7c8, #bdc3c7) !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.light_mode_body{
+    background-color: white;
+}
+
+.light_mode_black{
+    color: #2c3e50 !important;
+}
+
+.light_mode_title{
+    background: linear-gradient(135deg, hsla(275, 100%, 30%, 0.615), #F5D2C9) !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}   
+
+.light_mode_skills_items{
+    /* background: linear-gradient(135deg, hsla(0, 0%, 94%, 0.5), hsla(0, 0%, 85%, 0.7)) !important; */
+    background: none;
+    background-color:hsla(36, 33%, 97%, 0.8) !important ;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px) !important;
+}
+
+.light_mode_p{
+    color: #2c3e50;
+}
+
+.light_mode_input{
+    background-color:#FAF9F6 !important ;
+    color: #2c3e50 !important;
+}
+
+.light_mode input::placeholder,
+.light_mode textarea::placeholder {
+    color: #2c3e50; /* Example color for light mode */
+}
+
+.light_mode_send{
+    background: linear-gradient(135deg, hsla(210, 29%, 24%, 0.837), hsla(0, 0%, 0%, 0.848)) !important;
+}
+
+.light_mode_img .about_img img:hover{
+    transform: scale(1.1); 
+    box-shadow: 0 8px 24px hsla(210, 29%, 24%, 0.682);
+}
+
+.light_mode_p1{
+    color: hsla(210, 29%, 24%, 0.888);
+}
+
+.light_mode_nav .menu_items:hover{
+    color: #2c3e50 !important;
+}
+
+.light_mode_white{
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(30px) !important;
+}
+
+.light_mode_menu .menu_items::before{
+        content: "";
+        position: absolute;
+        bottom: -0.2rem;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #ff8a00, #e52e71);
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border-radius: 20px;
+}
+
+.light_mode_hover .menu_items:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.light_mode_colour{
+    filter: none;
+}
+
+/* Light Mode close */
+
+.glow_circle {  
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(220, 220, 220, 0.8) 60%, rgba(192, 192, 192, 0) 100%);
+    box-shadow: 0 0 20px rgba(220, 220, 255, 0.7), 0 0 40px rgba(220, 220, 255, 0.5), 0 0 60px rgba(192, 192, 255, 0.3);
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+}
+
+.glow_circle_sun {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 204, 0, 1) 0%, rgba(255, 94, 0, 0.8) 60%, rgba(255, 165, 0, 0) 100%);
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.9), 0 0 60px rgba(255, 140, 0, 0.7), 0 0 90px rgba(255, 69, 0, 0.5);
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+}
+
+.higher_z{
+    z-index: 10000000;
+}
