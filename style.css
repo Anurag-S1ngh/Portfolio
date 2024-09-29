@@ -556,8 +556,8 @@ input:focus:hover, textarea:focus:hover {
     }
 
     .menu_items{
-        font-size: 4.5rem;
-        font-weight: 600;
+        font-size: 4.2rem;
+        font-weight: 500;
         margin-left: 6rem;
     }
 
@@ -575,7 +575,6 @@ input:focus:hover, textarea:focus:hover {
     .menu_items:hover {
         color: #ff7e5f; /* Change color on hover */
         transform: translateY(-5px) scale(1.1); /* Move and scale on hover */
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
     }
 
     .open,
@@ -693,7 +692,7 @@ input:focus:hover, textarea:focus:hover {
 }
 
 .light_mode_title{
-    background: linear-gradient(135deg, hsla(275, 100%, 30%, 0.615), #F5D2C9) !important;
+    background: linear-gradient(135deg, hsla(274, 8%, 33%, 0.6), #F5D2C9) !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }   
@@ -740,6 +739,7 @@ input:focus:hover, textarea:focus:hover {
 .light_mode_white{
     background-color: rgba(255, 255, 255, 0.7) !important;
     backdrop-filter: blur(30px) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .light_mode_menu .menu_items::before{
