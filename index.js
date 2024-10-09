@@ -20,7 +20,6 @@ tl.from(".gsaptitle", {
     opacity: 0,
     duration: 3,
     stagger: 0.4,
-    markers: true,
     ease: "power4.out",
 });
 
@@ -33,7 +32,6 @@ gsap.from('.about_title ',{
         trigger: '.about_title',
         scroller: "body",
         start: "top 65%" ,
-        markers: true,
         end: "top 5%",
         scrub: 2 ,
         }
@@ -48,7 +46,6 @@ gsap.from('.about_img ',{
         trigger: '.about_img',
         scroller: "body",
         start: "top 50%" ,
-        markers: true,
         end: "top 5%",
         scrub: 2 ,
         }
@@ -63,7 +60,6 @@ gsap.from('.about_text ',{
         trigger: '.about_img',
         scroller: "body",
         start: "top 50%" ,
-        markers: true,
         end: "top 5%",
         scrub: 2 ,
         }
@@ -78,7 +74,6 @@ gsap.from('.skills_title ',{
         trigger: '.skills_title',
         scroller: "body",
         start: "top 55%" ,
-        markers: true,
         end: "top 5%",
         scrub: 2 ,
         }
@@ -95,7 +90,6 @@ gsap.from('.skill_item ',{
         scroller: "body",
         start: "top 50%" ,
         end: "top 5%",
-        markers: true,
         scrub: 2 ,
         }
 })
@@ -109,7 +103,6 @@ gsap.from('.project_title',{
         trigger: '.project_title',
         scroller: "body",
         start: "top 60%" ,
-        markers: true,
         end: "top 5%",
         scrub: 2 ,
         }
@@ -124,7 +117,6 @@ gsap.from('.project_card',{
     scrollTrigger : {
         trigger: '.project_card',
         scroller: "body",
-        markers: true,
         start: "top 50%" ,
         end: "top 5%",
         scrub: 2 ,
@@ -139,7 +131,6 @@ gsap.from('.contact_title',{
     scrollTrigger : {
         trigger: '.contact_title',
         scroller: "body",
-        markers: true,
         start: "top 70%" ,
         end: "top 20%",
         scrub: 2 ,
@@ -155,7 +146,6 @@ gsap.from('form input',{
     scrollTrigger : {
         trigger: 'form input',
         scroller: "body",
-        markers: true,
         start: "top 70%" ,
         end: "top 40%",
         scrub: 2 ,
@@ -171,7 +161,6 @@ gsap.from('form textarea',{
     scrollTrigger : {
         trigger: 'form textarea',
         scroller: "body",
-        markers: true,
         start: "top 75%" ,
         end: "top 60%",
         scrub: 2 ,
@@ -187,7 +176,6 @@ gsap.from('.button_',{
     scrollTrigger : {
         trigger: '.button_',
         scroller: "body",
-        markers: true,
         start: "top 87%" ,
         end: "top 95%",
         scrub: 2 ,
