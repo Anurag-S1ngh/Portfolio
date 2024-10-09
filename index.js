@@ -1,12 +1,211 @@
-$('.open').click(()=>{
-    $('.nav_container').addClass('show');
-    $('.glow_circle').addClass('higer_z');
+
+const circle = document.querySelector('.glow_circle');
+
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    gsap.to(".glow_circle", {
+        duration: 1,
+        x: x - 20,
+        y: y - 20,
+        ease: "elastic.out(1.2,1)",
+    });
+});
+
+var tl = gsap.timeline();
+
+tl.from(".gsaptitle", {
+    delay: 1,
+    y: -60,
+    opacity: 0,
+    duration: 3,
+    stagger: 0.4,
+    markers: true,
+    ease: "power4.out",
+});
+
+gsap.from('.about_title ',{
+    x: -50,
+    opacity: 0,
+    duration: 2,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: '.about_title',
+        scroller: "body",
+        start: "top 65%" ,
+        markers: true,
+        end: "top 5%",
+        scrub: 2 ,
+        }
 })
 
-$('.close, .menu_items').click(()=>{
-    $('.nav_container').removeClass('show');
-    $('.glow_circle').removeClass('higher_z');
+gsap.from('.about_img ',{
+    x: 50,
+    opacity: 0,
+    duration: 2,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: '.about_img',
+        scroller: "body",
+        start: "top 50%" ,
+        markers: true,
+        end: "top 5%",
+        scrub: 2 ,
+        }
 })
+
+gsap.from('.about_text ',{
+    x: -50,
+    opacity: 0,
+    duration: 3,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: '.about_img',
+        scroller: "body",
+        start: "top 50%" ,
+        markers: true,
+        end: "top 5%",
+        scrub: 2 ,
+        }
+})
+
+gsap.from('.skills_title ',{
+    x: -50,
+    opacity: 0,
+    duration: 3,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: '.skills_title',
+        scroller: "body",
+        start: "top 55%" ,
+        markers: true,
+        end: "top 5%",
+        scrub: 2 ,
+        }
+})
+
+gsap.from('.skill_item ',{
+    y: -50,
+    opacity: 0,
+    duration: 4,
+    stagger: 0.4,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: '.skill_item',
+        scroller: "body",
+        start: "top 50%" ,
+        end: "top 5%",
+        markers: true,
+        scrub: 2 ,
+        }
+})
+
+gsap.from('.project_title',{
+    x: -50,
+    opacity: 0,
+    duration: 3,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: '.project_title',
+        scroller: "body",
+        start: "top 60%" ,
+        markers: true,
+        end: "top 5%",
+        scrub: 2 ,
+        }
+})
+
+gsap.from('.project_card',{
+    y: 50,
+    opacity: 0,
+    duration: 4,
+    ease: "power4.out",
+    stagger: 0.6,
+    scrollTrigger : {
+        trigger: '.project_card',
+        scroller: "body",
+        markers: true,
+        start: "top 50%" ,
+        end: "top 5%",
+        scrub: 2 ,
+        }
+})
+
+gsap.from('.contact_title',{
+    x: -50,
+    opacity: 0,
+    duration: 3,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: '.contact_title',
+        scroller: "body",
+        markers: true,
+        start: "top 70%" ,
+        end: "top 20%",
+        scrub: 2 ,
+        }
+})
+
+gsap.from('form input',{
+    x: -50,
+    opacity: 0,
+    duration: 3,
+    stagger: 0.3,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: 'form input',
+        scroller: "body",
+        markers: true,
+        start: "top 70%" ,
+        end: "top 40%",
+        scrub: 2 ,
+        }
+})
+
+gsap.from('form textarea',{
+    x: -50,
+    opacity: 0,
+    duration: 3,
+    stagger: 0.3,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: 'form textarea',
+        scroller: "body",
+        markers: true,
+        start: "top 75%" ,
+        end: "top 60%",
+        scrub: 2 ,
+        }
+})
+
+gsap.from('.button_',{
+    x: -50,
+    opacity: 0,
+    duration: 3,
+    stagger: 0.3,
+    ease: "power4.out",
+    scrollTrigger : {
+        trigger: '.button_',
+        scroller: "body",
+        markers: true,
+        start: "top 87%" ,
+        end: "top 95%",
+        scrub: 2 ,
+        }
+})
+
+
+
+
+$('.open').click(() => {
+    $('.nav_container').addClass('show');
+    $('.glow_circle').addClass('higher_z');  // Ensure class names are correct
+});
+
+$('.close, .menu_items').click(() => {
+    $('.nav_container').removeClass('show');
+    $('.glow_circle').removeClass('higher_z');  // Consistent class
+});
 
 $('.moon').click(()=>{
     $('.moon').addClass('moon_hide');
@@ -53,120 +252,3 @@ $('.sun').click(()=>{
     $('body').removeClass('light_mode_menu');
     $('.skills_items').removeClass('light_mode_colour');
 })
-
-var up1={
-    distance: '80px',
-    opacity: 0,
-    delay: 200,
-    duration:800,
-    easing: 'ease-out',
-    origin: 'top',
-    delay:200
-}
-var up2={
-    distance: '80px',
-    opacity: 0,
-    delay: 200,
-    duration:800,
-    easing: 'ease-out',
-    origin: 'top',
-    delay: 500
-}
-var up3={
-    distance: '60px',
-    opacity: 0,
-    delay: 200,
-    duration:800,
-    easing: 'ease-out',
-    origin: 'top',
-    delay: 800
-}
-var up4={
-    distance: '40px',
-    opacity: 0,
-    delay: 200,
-    duration:800,
-    easing: 'ease-out',
-    origin: 'top',
-    interval: 200,
-    delay: 400
-}
-var up5={
-    distance: '40px',
-    opacity: 0,
-    delay: 200,
-    duration:800,
-    easing: 'ease-out',
-    origin: 'top',
-    interval: 200,
-    delay: 600
-}
-var left={
-    distance: '40px',
-    opacity: 0,
-    delay: 200,
-    duration:600,
-    easing: 'ease-out',
-    origin: 'left',
-    interval:200,
-    delay: 200
-}
-var left2={
-    distance: '40px',
-    opacity: 0,
-    delay: 200,
-    duration:600,
-    easing: 'ease-out',
-    origin: 'left',
-    interval:200,
-    delay: 500
-}
-var left3={
-    distance: '40px',
-    opacity: 0,
-    delay: 200,
-    duration:600,
-    easing: 'ease-out',
-    origin: 'left',
-    interval:200,
-    delay: 700
-}
-var right={
-    distance: '60px',
-    opacity: 0,
-    delay: 200,
-    duration:800,
-    easing: 'ease-out',
-    origin: 'right',
-    delay: 400
-}
-var down={
-    distance: '40px',
-    opacity: 0,
-    delay: 200,
-    duration:800,
-    easing: 'ease-out',
-    origin: 'bottom',
-    interval:200,
-    delay: 750
-}
-
-const circle = document.querySelector('.glow_circle');
-
-document.addEventListener('mousemove', (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-    circle.style.transform = `translate(${x - 25}px, ${y - 25}px)`; 
-});
-
-ScrollReveal().reveal('.title h1',up2);
-ScrollReveal().reveal('.title h2',up3);
-ScrollReveal().reveal('.title h3',up1);
-ScrollReveal().reveal('.about_text',left);
-ScrollReveal().reveal('.about_img',right);
-ScrollReveal().reveal('.skill_item',up4);
-ScrollReveal().reveal('.project_card',up5);
-ScrollReveal().reveal('input',left);
-ScrollReveal().reveal('textarea',left2);
-ScrollReveal().reveal('.button_',left3);
-ScrollReveal().reveal('.social_items',down);
