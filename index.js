@@ -1,4 +1,3 @@
-
 const circle = document.querySelector('.glow_circle');
 
 document.addEventListener('mousemove', (e) => {
