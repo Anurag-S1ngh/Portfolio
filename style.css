@@ -22,7 +22,6 @@ h1,h2,h3,h4,h5,p{
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 1rem;
 }
 
 a {
@@ -134,7 +133,7 @@ h1,h2,h3,h4,h5,p{
     font-size: 1.5rem;
 }
 
-.title h1 {
+.home_name{
     font-size: 3.5rem;
     background: linear-gradient(90deg, #88d3ce, #6e45e2);
     background-clip: text;
@@ -219,7 +218,7 @@ main{
 }
 
 .skills_items {
-    background: linear-gradient(135deg, hsla(210, 29%, 24%, 0.45), hsla(0, 0%, 0%, 0.8));
+    background: linear-gradient(135deg, hsla(210, 29%, 24%, 0.5), hsla(0, 0%, 9%, 0.8));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -535,7 +534,7 @@ input:focus:hover, textarea:focus:hover {
     }
 
     .skills_title{
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
     }
 
     .contact_title{
@@ -762,6 +761,10 @@ input:focus:hover, textarea:focus:hover {
     transform: scaleX(1);
 }
 
+.light_mode_hover_p1 .light_mode_p1:hover{
+    color: hsla(210, 29%, 24%, 0.888);
+}
+
 .light_mode_colour{
     filter: none;
 }
@@ -770,8 +773,8 @@ input:focus:hover, textarea:focus:hover {
 
 .glow_circle {  
     position: fixed;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(220, 220, 220, 0.8) 60%, rgba(192, 192, 192, 0) 100%);
     box-shadow: 0 0 20px rgba(220, 220, 255, 0.7), 0 0 40px rgba(220, 220, 255, 0.5), 0 0 60px rgba(192, 192, 255, 0.3);
@@ -781,8 +784,8 @@ input:focus:hover, textarea:focus:hover {
 
 .glow_circle_sun {
     position: fixed;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(255, 204, 0, 1) 0%, rgba(255, 94, 0, 0.8) 60%, rgba(255, 165, 0, 0) 100%);
     box-shadow: 0 0 30px rgba(255, 165, 0, 0.9), 0 0 60px rgba(255, 140, 0, 0.7), 0 0 90px rgba(255, 69, 0, 0.5);
@@ -792,4 +795,12 @@ input:focus:hover, textarea:focus:hover {
 
 .higher_z{
     z-index: 10000000;
+}
+
+.home_name span{
+    display: inline-block;
+}
+
+.home_name{
+    overflow: hidden;
 }
